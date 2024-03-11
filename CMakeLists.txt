@@ -1,10 +1,14 @@
-cmake_minimum_required(VERSION 3.10)
-project(Server)
+cmake_minimum_required(VERSION 3.0)
+project(web-app)
 
-set(CMAKE_CXX_STANDARD 11)
+set(HTTPLIB_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/cpp-httplib-master")
 
-include_directories(cpp-httplib-master)
+file(GLOB SOURCES "*.cpp")
 
-add_executable(Server main.cpp)
+add_executable(web-app ${SOURCES})
 
-#target_link_libraries(Server libhttplib)
+target_compile_features(web-app PUBLIC cxx_std_11)
+
+target_include_directories(web-app PUBLIC ${HTTPLIB_INCLUDE_DIR})
+
+target_link_libraries(web-app PRIVATE httplib::httplib)
