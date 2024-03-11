@@ -10,5 +10,3 @@ add_executable(web-app ${SOURCES})
 target_compile_features(web-app PUBLIC cxx_std_11)
 
 target_include_directories(web-app PUBLIC ${HTTPLIB_INCLUDE_DIR})
-
-#target_link_libraries(web-app PRIVATE httplib::httplib)
