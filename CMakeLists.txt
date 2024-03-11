@@ -7,4 +7,4 @@ include_directories(cpp-httplib-master)
 
 add_executable(Server main.cpp)
 
-target_link_libraries(Server libhttplib)
+##target_link_libraries(Server libhttplib)
